@@ -1,51 +1,33 @@
-import { View, Pressable, Text, StyleSheet } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { View, Pressable, Text } from 'react-native';
+import { Styles } from '../assets/styles/Styles';
+import Button from '../components/Button';
+import { StackProps } from '../model';
 
-export default function Home() {
+export default function Home({
+  navigation
+}: NativeStackScreenProps<StackProps>) {
   return (
-    <View style={styles.buttonsContainer}>
-      <View style={styles.buttonBox}>
-        <Pressable android_ripple={{ color: '#001b3e' }}>
-          <Text style={styles.text}>Generate Character</Text>
+    <View style={Styles.container}>
+      <View style={Styles.primaryBtn}>
+        <Pressable
+          android_ripple={{ color: '#001b3e' }}
+          onPress={() => navigation.navigate('CharacterSetup')}
+        >
+          <Text style={Styles.primaryText}>Generate Character</Text>
         </Pressable>
       </View>
-      <View style={styles.buttonBox}>
+      <Button label="Generate Children" onPress={() => null} />
+      <View style={Styles.primaryBtn}>
         <Pressable android_ripple={{ color: '#001b3e' }}>
-          <Text style={styles.text}>Generate Children</Text>
+          <Text style={Styles.primaryText}>View Saved Characters</Text>
         </Pressable>
       </View>
-      <View style={styles.buttonBox}>
+      <View style={Styles.primaryBtn}>
         <Pressable android_ripple={{ color: '#001b3e' }}>
-          <Text style={styles.text}>View Saved Characters</Text>
-        </Pressable>
-      </View>
-      <View style={styles.buttonBox}>
-        <Pressable android_ripple={{ color: '#001b3e' }}>
-          <Text style={styles.text}>View/Edit Tables</Text>
+          <Text style={Styles.primaryText}>View/Edit Tables</Text>
         </Pressable>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  buttonsContainer: {
-    backgroundColor: '#1a1b1e',
-    padding: 48,
-    flex: 1,
-    alignItems: 'center'
-  },
-  buttonBox: {
-    alignSelf: 'stretch',
-    overflow: 'hidden',
-    borderRadius: 8,
-    backgroundColor: '#aac7ff',
-    elevation: 8,
-    marginTop: 16,
-    marginBottom: 16
-  },
-  text: {
-    padding: 24,
-    color: '#003064',
-    textAlign: 'center'
-  }
-});

@@ -1,5 +1,4 @@
-import { AgeClass } from '../enums/Age';
-import { MarriageStatus } from '../enums/MarriageStatus';
+import { AgeClass, MarriageStatus, Sex } from '../index';
 
 export class Character {
   private id: string | undefined;
@@ -7,6 +6,7 @@ export class Character {
   age: AgeClass | number;
   ageOfDeath: AgeClass | number;
   bastard: boolean;
+  gender: Sex;
   goal: string | undefined;
   marriageStatus: MarriageStatus;
   name: string | undefined;
