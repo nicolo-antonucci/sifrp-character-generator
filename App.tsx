@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'react-native';
-import CharacterSetup from './pages/CharacterSetup';
-import Home from './pages/Home';
+import CharacterSetup from './src/pages/CharacterSetup';
+import Home from './src/pages/Home';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
